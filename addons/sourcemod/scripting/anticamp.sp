@@ -127,16 +127,6 @@ public OnPluginStart()
 
 	decl String:gamedir[PLATFORM_MAX_PATH];
 	GetGameFolderName(gamedir, sizeof(gamedir));
-	if(strcmp(gamedir, "cstrike") == 0)
-	{
-		g_iGame = GAME_CSS;
-		WeaponConfigFile = "configs/anticamp_css_weapons.cfg";
-	}
-	else
-	{
-		g_iGame = GAME_CSGO;
-		WeaponConfigFile = "configs/anticamp_csgo_weapons.cfg";
-	}
 
 	HookEvent("player_spawn", EventPlayerSpawn, EventHookMode_Post);
 	HookEvent("player_death", EventPlayerDeath, EventHookMode_PostNoCopy);
